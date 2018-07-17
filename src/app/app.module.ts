@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {FlashMessagesModule} from 'angular2-flash-messages';
+import {PopupModule} from 'ng2-opd-popup';
 
 import {AppComponent} from './app.component';
 import {SearchComponent} from './search/search.component';
@@ -11,6 +12,8 @@ import {SearchService} from './search/search.service';
 import {SearchResultService} from './search-result/search-result.service';
 import {DescriptionService} from './description/description.service';
 import {HierarchyService} from './search-result/hierarchy.service';
+import {ProvisionToolService} from './checkout/provision-tool.service';
+
 import {SearchResultComponent} from './search-result/search-result.component';
 
 import {RouterModule, Routes} from '@angular/router';
@@ -21,10 +24,10 @@ import {CheckoutComponent} from './checkout/checkout.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: SearchComponent},
-  {path: 'search-result', component: SearchResultComponent},
-  {path: 'description', component: DescriptionComponent},
-  {path: 'checkout', component: CheckoutComponent}
+  {path:'', component: SearchComponent},
+  {path:'search-result', component: SearchResultComponent},
+  {path:'description', component: DescriptionComponent},
+  {path:'checkout', component: CheckoutComponent}
 ];
 
 @NgModule({
@@ -43,10 +46,10 @@ const appRoutes: Routes = [
     HttpModule,
     ExpandableListModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    PopupModule.forRoot()
   ],
-  providers: [SearchService, SearchResultService, DescriptionService, HierarchyService],
+  providers: [SearchService, SearchResultService, DescriptionService, HierarchyService, ProvisionToolService],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
