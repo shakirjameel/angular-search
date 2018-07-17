@@ -1,0 +1,55 @@
+<!-- <hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p> -->
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="row" style="margin:20px;">
+  <div class="col-lg-3">
+  <div class="jumbotron">
+<ul>
+  <li class="btn btn-link" style="color: #6c757d"><i class="fas fa-arrow-right"></i> Process development</li>
+  <ul>
+    <li class="btn btn-link" style="color: #6c757d"><i class="fas fa-arrow-right"></i> Holistic Lab</li>
+    <ul>
+      <li class="btn btn-link"><i class="fas fa-arrow-right"></i> Equipment</li>
+    </ul>
+    <li class="btn btn-link" style="color: #6c757d"><i class="fas fa-arrow-right"></i> Instrument Data</li>
+    <ul>
+      <li class="btn btn-link" ><i class="fas fa-arrow-right"></i> Equipment</li>
+    </ul>
+  </ul>
+  <li class="btn btn-link" style="color: #6c757d"><i class="fas fa-arrow-right"></i> Clinical Data</li>
+  <ul>
+    <li class="btn btn-link" style="color: #6c757d"><i class="fas fa-arrow-right"></i> Clinical Data Sourece</li>
+    <ul>
+      <li class="btn btn-link"><i class="fas fa-arrow-right"></i> Equipment</li>
+    </ul>
+  </ul>
+</ul>
+	</div>
+  </div>
+
+<div class="container">
+<div class="row">
+  <div class="col-lg-8">
+  <div class="jumbotron">
+    <h4 class="display-8">Showing results for <span [innerHTML] = "searchResult"></span></h4>
+    <span *ngFor="let result_arr of results_arrays">
+      <span *ngFor="let data_value of result_arr[1]">
+        <div class="card w-100 btn-link" (click)="selectedData(data_value, result_arr[2])" style="margin-top:10px;">
+          <div class="card-body">
+            <h5 class="card-title"><b>{{data_value[1]}}</b> in {{result_arr[0]}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted" *ngIf="result_arr[2] !=='public_ontology'">Description</h6>
+            <h6 class="card-subtitle mb-2 text-muted" *ngIf="result_arr[2] ==='public_ontology'"><b>Public Ontology</b></h6>
+            <p class="card-text">{{data_value[2]}}</p>
+          </div>
+        </div>
+        </span>
+      </span>
+	  </div>
+  </div>
+  </div>
+  </div>
+</div>
+

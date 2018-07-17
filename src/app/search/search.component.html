@@ -1,0 +1,16 @@
+<section class="filter-wrapper">
+  <div class="keyword-wrapper">
+    <input [formControl]="queryField" type="text" id="keyword" placeholder="Search data here..." autofocus/>
+  </div>
+  <span style="border-bottom: 1px">
+  <span *ngFor="let result_arr of result_list">
+    <ul class="filter-select">
+      <li (click)="selectedSuggestion(result)" *ngFor="let result of result_arr" class="filter-select-list">
+        <p class="artist-name" [innerHTML]="result[2]"></p>
+        <!--<span class="tags" *ngFor='let result of result  | slice:0:6'>{{result}}</span>-->
+      </li>
+    </ul>
+  </span>
+    </span>
+</section>
+

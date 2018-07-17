@@ -1,0 +1,41 @@
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+  background-color: #cccccc;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  background-color: #cccccc;
+  color: #cccccc;
+}
+.navbar-brand
+{
+  font-family : "Lato", sans-serif;
+  font-weight : bold;
+  font-size : 15px;
+  color : #444444;
+}
+
+.navbar-default{
+  background: #fff;
+  border: 0;
+}
+
+a {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+.navbar-toggle {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #111111;
+  border-radius: 1px;
+}

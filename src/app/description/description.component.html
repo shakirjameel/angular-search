@@ -1,0 +1,176 @@
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+<div class="row">
+ <div class="jumbotron" style="margin-top:10px;width:90%">
+  <div class="result-description">
+    <h4 class="display-6">Showing data for <b>{{data_name}}</b></h4>
+
+      <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+        <li><a class="nav-item nav-link" ngClass="{{description_flag}}" (click)="toggleActiveFlag('Description')" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Description</a></li>
+        <li><a class="nav-item nav-link" ngClass="{{schema_flag}}" (click)="toggleActiveFlag('Schema and Data Preview')" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Schema and Data Preview</a></li>
+      </ul>
+
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show" ngClass="{{description_flag}}"  id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="col-lg-8" style="margin-top:10px;">
+          <p style="">{{long_description}}
+          <br>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart</button>
+        </div>
+	    </div>
+      <div class="tab-pane fade show" ngClass="{{schema_flag}}" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="max-height:400px;overflow-y:scroll;overflow-x:scroll;">
+        <div class="row">
+          <div class="col-lg-12" style="margin-top:10px;">
+          <h4>Table Schema</h4>
+           <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Column Name</th>
+              <th>Column Datatype</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EQUIPMENT_AMG_ASSETNUMBER</td>
+              <td>VARCHAR2(100 BYTE)</td>
+            </tr>
+            <tr>
+              <td>EQUIPMENT_AMG_BUILDING</td>
+              <td>VARCHAR2(100 BYTE)</td>
+            </tr>
+            <tr>
+              <td>EQUIPMENT_AMG_SITE</td>
+              <td>VARCHAR2(100 BYTE)</td>
+            </tr>
+          <tr>
+              <td>EQUIPMENT_DEPARTMENT</td>
+              <td>VARCHAR2(100 BYTE)</td>
+            </tr>
+          <tr>
+              <td>EQUIPMENT_EQUIPMENTNAME</td>
+              <td>VARCHAR2(100 BYTE)</td>
+            </tr>
+              <tr>
+              <td>EQUIPMENT_EQUIPMENTTYPE</td>
+              <td>VARCHAR2(100 BYTE)</td>
+            </tr>
+                  <tr>
+              <td>EQUIPMENT_MANUFACTURER</td>
+              <td>VARCHAR2(100 BYTE)</td>
+            </tr>
+                      <tr>
+              <td>EQUIPMENT_MODEL</td>
+              <td>VARCHAR2(100 BYTE)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        </div>
+      </div>
+
+	  <div class="row">
+	  <div class="col-lg-12" style="margin-top:10px;">
+	  <h4>Table Preview</h4>
+	   <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>EQUIPMENT_AMG_ASSETNUMBER</th>
+        <th>EQUIPMENT_AMG_BUILDING</th>
+		<th>EQUIPMENT_AMG_SITE</th>
+		<th>EQUIPMENT_DEPARTMENT</th>
+		<th>EQUIPMENT_EQUIPMENTNAME</th>
+		<th>EQUIPMENT_EQUIPMENTTYPE</th>
+		<th>EQUIPMENT_MANUFACTURER</th>
+		<th>EQUIPMENT_MODEL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1017125</td>
+        <td>TO-0303112</td>
+		<td>TO</td>
+		<td>Amgen</td>
+		<td>DPPD LYOPHILIZER</td>
+		<td>S.P. INDUSTRIES VERTIS ADVANTAGE PLUS</td>
+		<td>S.P. INDUSTRIES</td>
+		<td>VERTIS ADVANTAGE PLUS</td>
+      </tr>
+	  <tr>
+	  <td>1060225</td>
+	  <td>TO-0301854</td>
+	  <td>TO</td>
+	  <td>Default Department</td>
+	<td>PRODUCT ATTRIBUTE</td>
+	<td>SCIENCES PLATE READER</td>
+	<td>PERKIN ELMER ENVISION 2104</td>
+	<td>PERKIN ELMER	ENVISION 2104</td>
+	</tr>
+    </tbody>
+  </table>
+
+	  </div>
+	  </div>
+
+	  </div>
+    </div>
+  </div>
+  <!--<div class="checkout-card">
+    <div class="card text-center" align="center">
+      <div class="card-body">
+        <h5 class="card-title">Checkout</h5>
+        <p class="card-text"><b>{{data_name}}</b></p>
+        <a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart</a><br>
+        <a href="#" class="btn btn-primary" style="margin-top: 10px"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Checkout</a>
+      </div>
+    </div>
+  </div>-->
+	</div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+  <hr>
+  <h4><b>Related Datasets</b></h4>
+  <div id="carouselExampleIndicators" class="carousel slide" data-interval="false" data-ride="carousel" style="margin: 5px">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+	  <div class="card mx-auto" style="width: 28rem;">
+  <div class="card-body">
+	<h5 class="card-title">{{current_data_name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+    <p class="card-text">{{current_data_description}}</p>
+    <button type="button" class="btn btn-primary btn-md">Get Info</button>
+  </div>
+</div>
+		<!--<div class="card w- btn-link mx-auto">
+          <div class="card-body">
+            <h5 class="card-title"><b>{{current_data_name}}</b></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+            <p class="card-text">{{current_data_description}}</p>
+          </div>
+        </div>-->
+      </div>
+      <!--<div class="carousel-item">
+        <div class="card w-75 btn-link mx-auto">
+          <div class="card-body">
+            <h5 class="card-title"><b>DATA Name</b></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+            <p class="card-text">DATA Description</p>
+          </div>
+        </div>
+
+      </div>-->
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" (click)="decrementNextRelatedDataset()">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" (click)="incrementNextRealatedDataset()">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+</div>

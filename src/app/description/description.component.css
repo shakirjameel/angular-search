@@ -1,0 +1,51 @@
+.active {
+  display: block!important;
+}
+
+.checkout-card{
+  float: right;
+}
+div.card:hover{
+  background-color: #cccccc;
+}
+.btn-link{
+  text-decoration: none;
+}
+.container-fluid{
+  width: 100%;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+
+  background-size: 100%, 100%;
+
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 40px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 40px;
+  color: black;
+}
+
+.footer{
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  padding-bottom: 20px;
+}
+
+.carousel-item{
+  max-height: 250px;
+  align-items: center;
+}
+
