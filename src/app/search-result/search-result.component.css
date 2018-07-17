@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-.btn-link{
+.btn-link {
   text-decoration: none;
 }
+
 div.row_result {
   border-style: ridge;
   width: 100%;
@@ -11,24 +12,27 @@ div.row_result {
   box-shadow: #cccccc;
 
 }
-div.col-lg-3{
+
+div.col-lg-3 {
   border-right: 3px solid #0062cc;
 }
-.grid{
+
+.grid {
   display: grid;
   grid-template-columns: 30% 70%;
 }
-div.result-container p{
+
+div.result-container p {
   margin-bottom: 30px;
 }
 
-div.col-lg-9{
+div.col-lg-9 {
 
   align-items: center;
-/*  margin: auto;
-  width: 50%;
-  margin-top: 40px;
-  margin-bottom: 40px;*/
+  /*  margin: auto;
+    width: 50%;
+    margin-top: 40px;
+    margin-bottom: 40px;*/
 
   /* margin-top: 40px;
   margin-left: 50px;
@@ -36,16 +40,16 @@ div.col-lg-9{
   margin-bottom: 40px; */
 }
 
-div.card:hover{
+div.card:hover {
   background-color: #cccccc;
 }
 
-div.col-8{
+div.col-8 {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-p{
+p {
   font-family: 'Lato', sans-serif;
 }
 
@@ -55,19 +59,24 @@ element.style {
   width: 122.547px;
   z-index: 2;
 }
+
 #scrollspy {
   width: 100%;
 }
+
 *, ::after, ::before {
   box-sizing: border-box;
 }
+
 div {
   /*display: block;*/
 }
+
 body {
-  font-family: Roboto,sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 300;
 }
+
 body {
   margin: 0;
   /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";*/
@@ -79,6 +88,7 @@ body {
   text-align: left;
   background-color: #fff;
 }
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -106,9 +116,10 @@ body {
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -117,9 +128,11 @@ html {
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
 }
+
 *, ::after, ::before {
   box-sizing: border-box;
 }
+
 *, ::after, ::before {
   box-sizing: border-box;
 }

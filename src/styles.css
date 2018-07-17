@@ -16,8 +16,6 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-
-
 .filter-wrapper,
 .keyword-wrapper {
   display: flex;
@@ -34,6 +32,15 @@ body {
   width: 100%;
   margin-bottom: 1px;
   position: relative;
+}
+
+.hierarchy-item {
+  list-style-type: none;
+  color: #0062cc;
+}
+
+.hierarchy-item:before {
+  content: "➤ ";
 }
 
 #keyword {
