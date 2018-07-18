@@ -2,6 +2,9 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Popup } from 'ng2-opd-popup';
 import { ProvisionToolService  } from './provision-tool.service';
+import { ActivatedRoute } from '@angular/router';
+import {UpdateCartServiceService} from '../navbar/update-cart-service.service';
+
 
 @Component({
   selector: 'app-checkout',
@@ -13,16 +16,29 @@ export class CheckoutComponent implements OnInit {
   external_table_name: string;
   provisioning_data: boolean;
   provisioned_success: boolean;
+  dataset_list: any[] = [];
+  dataset_count: number = 0;
+  cart_content: any[] = [];
+  start_provisioning: boolean = false;
+  radio_button_selection: boolean =false;
+  deletion_after_provision: any[] = [];
 
 
 
   constructor(private flash_message:  FlashMessagesService,
               private popup: Popup,
-              private _api_service: ProvisionToolService) { }
+              private cart_service: UpdateCartServiceService,
+              private _api_service: ProvisionToolService,
+              private activated_route: ActivatedRoute) { }
 
   ngOnInit() {
     this.provisioning_data = false;
     this.provisioned_success = false;
+    this.radio_button_selection = false;
+    this.dataset_list = JSON.parse(this.activated_route.snapshot.queryParams["cart_content"])[0];
+    this.dataset_count = JSON.parse(this.activated_route.snapshot.queryParams["cart_content"])[1];
+    //this.dataset_count = cart_content[1];
+    console.log(this.dataset_list);
   }
 
   toolSelected(tool_name){
@@ -53,9 +69,16 @@ export class CheckoutComponent implements OnInit {
       console.log(result);
       if(result.status === 'success'){
         this.provisioning_data = false;
+        this.remove_from_list(this.deletion_after_provision);
         this.provisioned_success = true;
       }
     });
+  }
+  remove_from_list(dataset){
+    this.dataset_list.splice( this.dataset_list.indexOf(dataset), 1 );
+    console.log(this.dataset_list);
+    this.dataset_count-=1;
+    this.cart_service.changeMessage([this.dataset_list, this.dataset_count]);
   }
 
   successAlertClose(){
@@ -63,5 +86,8 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-
+  radioButtonClicked(dataset){
+    this.radio_button_selection = true;
+    this.deletion_after_provision = dataset;
+  }
 }

@@ -13,6 +13,7 @@ import {SearchResultService} from './search-result/search-result.service';
 import {DescriptionService} from './description/description.service';
 import {HierarchyService} from './search-result/hierarchy.service';
 import {ProvisionToolService} from './checkout/provision-tool.service';
+import {UpdateCartServiceService} from './navbar/update-cart-service.service';
 
 import {SearchResultComponent} from './search-result/search-result.component';
 
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
     FlashMessagesModule.forRoot(),
     PopupModule.forRoot()
   ],
-  providers: [SearchService, SearchResultService, DescriptionService, HierarchyService, ProvisionToolService],
+  providers: [SearchService, SearchResultService, DescriptionService, HierarchyService, ProvisionToolService, UpdateCartServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

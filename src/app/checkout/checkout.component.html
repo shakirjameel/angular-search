@@ -4,38 +4,67 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<div *ngIf="!provisioning_data" class="card w-50">
-  <h5 class="card-header">Checkout</h5>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-    <popup (confirmClick)="provisionData()" style="">
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">External Table Name</label>
-          <input [(ngModel)]="external_table_name" name="external_table_name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter external table name...">
-          <small id="emailHelp" class="form-text text-muted">Table with this name would be created in your personal workspace with your selected data</small>
+<div *ngIf=provisioning_data class="alert alert-info" role="alert">
+  <i class="fa fa-spinner fa-spin" style="font-size:24px; margin: auto"></i> Please wait while your data is being provisioned ...
+</div>
+
+<popup (confirmClick)="provisionData()" style="">
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">External Table Name</label>
+      <input [(ngModel)]="external_table_name" name="external_table_name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter external table name...">
+      <small id="emailHelp" class="form-text text-muted">Table with this name would be created in your personal workspace with your selected data</small>
+    </div>
+  </form>
+</popup>
+
+<div *ngIf="!provisioning_data" class="container">
+  <div class="row">
+    <h1 class="display-4">Checkout</h1>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="jumbotron" style="margin-top:10px;">
+        <div class="repeat" *ngFor="let dataset of dataset_list">
+          <input type="radio" (click)="radioButtonClicked(dataset)" class="radio float-right" name="test" id=i1 style="margin-top:20px;">
+          <h4 class="display-6">{{dataset.name}}
+          </h4>
+          <p class="lead">Dataset Decription</p>
+          <hr class="my-4">
+          <p>{{dataset.short_description}}</p>
+          <p class="lead">
+            <button type="button" class="btn btn-danger btn-lg" (click)="remove_from_list(dataset)">Remove</button>
+          </p>
+          <hr>
         </div>
-      </form>
-    </popup>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="jumbotron" style="margin-top:10px;width:90%">
+        <h1 class="display-4">Provision</h1>
+        <p class="lead">Provision Data</p>
+        <hr class="my-4">
 
-    <div class="dropdown" style="display: block">
-      <p>Select your preferred tool: </p>
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Tool Selection
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" (click)="toolSelected('Databricks')">Databricks</a>
-        <a class="dropdown-item" href="#" (click)="toolSelected('Alteryx')">Alteryx</a>
-        <a class="dropdown-item" href="#" (click)="toolSelected('datascience.com')">datascience.com</a>
+        <div class="btn-group" style="margin-bottom:10px;">
+          <button *ngIf="radio_button_selection" class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose Tool
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" (click)="toolSelected('Databricks')">Databricks</a>
+            <a class="dropdown-item" (click)="toolSelected('Alteryx')">Alteryx</a>
+            <a class="dropdown-item" (click)="toolSelected('datascience.com')">datascience.com</a>
+          </div>
+        </div>
+        <br>
+        <!--<p class="lead">
+          <a class="btn btn-success btn-lg" role="button">Checkout</a>
+        </p>-->
       </div>
     </div>
   </div>
 </div>
 
-<div *ngIf=provisioning_data class="alert alert-info" role="alert">
-  <i class="fa fa-spinner fa-spin" style="font-size:24px; margin: auto"></i> Please wait while your data is being provisioned ...
-</div>
 
 

@@ -3,6 +3,10 @@
 <div class="container">
 <div class="row">
  <div class="jumbotron" style="margin-top:10px;width:90%">
+   <div class="alert alert-success" *ngIf="ui_alert_box">
+     <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="close_alert_box()">&times;</a>
+     <strong>Success!</strong> Added Dataset {{data_name}} to cart
+   </div>
   <div class="result-description">
     <h4 class="display-6">Showing data for <b>{{data_name}}</b></h4>
 
@@ -17,7 +21,7 @@
           <p style="">{{long_description}}
           <br>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart</button>
+          <button type="button" class="btn btn-primary btn-lg" (click)="add_to_cart(data_name, long_description, long_description)"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart</button>
         </div>
 	    </div>
       <div class="tab-pane fade show" ngClass="{{schema_flag}}" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="max-height:400px;overflow-y:scroll;overflow-x:scroll;">

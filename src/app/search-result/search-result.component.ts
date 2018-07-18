@@ -121,10 +121,10 @@ export class SearchResultComponent implements OnInit {
     console.log(type_of_data);
     if (type_of_data === "document") {
       console.log("The type of data selected is a document!");
-      this.document.location.href = data[0];
+      this.document.location.assign(data[0]);
     } else if (type_of_data === "public_ontology") {
       console.log("The type of data selected is a public ontology");
-      this.document.location.href = data[0];
+      this.document.location.assign(data[0]);
     } else {
       let related_dataset_payload = {
         "selected_data_uri": data[0],

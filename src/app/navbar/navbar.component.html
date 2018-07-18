@@ -1,14 +1,14 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <nav class="navbar navbar-default navbar-fixed-top bg-light">
-<div class="navbar-header">
-      <a class="navbar-brand" href="#"><img class="img-responsive" style="margin:2px" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Amgen.svg"/></a></div>
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a style="font-family: 'Lato', sans-serif" class="nav-link " (click)="userAccount()"><i class="fas fa-user-tie"></i>  User Account</a>
-      </li>
-      <li class="nav-item">
-        <a style="font-family: 'Lato', sans-serif" class="nav-link" (click)="checkOut()"><i class="fas fa-shopping-cart"></i>  Checkout</a>
-      </li>
-    </ul>
+  <div class="navbar-header">
+  <a class="navbar-brand" href="#"><img class="img-responsive" style="margin:2px" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Amgen.svg"/></a></div>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a style="font-family: 'Lato', sans-serif" class="nav-link " href="/"><i class="fas fa-user-tie"></i>  User Account</a>
+    </li>
+    <li class="nav-item">
+      <a style="font-family: 'Lato', sans-serif" class="nav-link" (click)="checkout()"><i class="fas fa-shopping-cart"></i> <span class="badge badge-secondary" *ngIf="cart_content[1]">{{cart_content[1]}}</span> Checkout</a>
+    </li>
+  </ul>
 </nav>

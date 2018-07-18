@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DescriptionService} from './description.service';
 import {SearchResultService} from '../search-result/search-result.service';
-
+import {UpdateCartServiceService} from '../navbar/update-cart-service.service';
 
 @Component({
   selector: 'app-description',
@@ -20,11 +20,24 @@ export class DescriptionComponent implements OnInit {
   current_data_name: string;
   current_data_uri: string;
   current_data_description: string;
+  number_of_items_in_cart: number;
+  ui_alert_box: boolean = false;
+  cart_count: any;
+  dataset: any;
+  dataset_list: any[]  = [];
+  dataset_count: number = 0;
+  cart_content: any[] = [];
+
   constructor(private _api_service: DescriptionService,
               private _get_description: SearchResultService,
-              private  activateRoute: ActivatedRoute) { }
+              private  activateRoute: ActivatedRoute,
+              private cart_service: UpdateCartServiceService) { }
 
   ngOnInit() {
+    this.dataset = {name: "SRC_HLEE", short_description: "TEST 1",  long_description: "TEST 2"};
+    this.dataset_count = 0;
+    this.ui_alert_box = false;
+    this.cart_service.currentMessage.subscribe(message => this.cart_content = message)
     this.next_realted_dataset = 0;
     this.tab_active = false;
     let selected_data_uri = this.activateRoute.snapshot.queryParams['selected_data_uri'];
@@ -57,6 +70,19 @@ export class DescriptionComponent implements OnInit {
 
 
 
+  }
+  add_to_cart(data_name, long_description, short_description){
+    this.ui_alert_box = true;
+    this.dataset.name = data_name;
+    this.dataset.long_description = long_description;
+    this.dataset.short_description = short_description;
+    this.dataset_list.push(this.dataset);
+    this.dataset_count += 1;
+    this.cart_content = [this.dataset_list, this.dataset_count];
+    this.cart_service.changeMessage(this.cart_content);
+  }
+  close_alert_box() {
+    this.ui_alert_box = false;
   }
 
   incrementNextRealatedDataset(){
