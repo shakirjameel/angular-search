@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { FlashMessage } from 'angular-flash-message/dist';
+
 import { Popup } from 'ng2-opd-popup';
 import { ProvisionToolService  } from './provision-tool.service';
 import { ActivatedRoute } from '@angular/router';
@@ -13,6 +13,7 @@ import {UpdateCartServiceService} from '../navbar/update-cart-service.service';
 })
 export class CheckoutComponent implements OnInit {
 
+  ui_alert_box: boolean;
   external_table_name: string;
   provisioning_data: boolean;
   provisioned_success: boolean;
@@ -25,13 +26,13 @@ export class CheckoutComponent implements OnInit {
 
 
 
-  constructor(private flash_message:  FlashMessage,
-              private popup: Popup,
+  constructor(private popup: Popup,
               private cart_service: UpdateCartServiceService,
               private _api_service: ProvisionToolService,
               private activated_route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.ui_alert_box = false;
     this.provisioning_data = false;
     this.provisioned_success = false;
     this.radio_button_selection = false;
@@ -41,6 +42,9 @@ export class CheckoutComponent implements OnInit {
     console.log(this.dataset_list);
   }
 
+  close_alert_box() {
+    this.ui_alert_box = false;
+  }
   toolSelected(tool_name){
     this.popup.options = {
       header: "Provisioning on Databricks",
@@ -56,7 +60,8 @@ export class CheckoutComponent implements OnInit {
     if(tool_name === 'Databricks'){
       this.popup.show();
     }else{
-      this.flash_message.warning('This tool is not configured for this demo!',{delay: 2000})
+      console.log("Add some flash message here!");
+      this.ui_alert_box = true;
     }
   }
 

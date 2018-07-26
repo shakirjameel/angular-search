@@ -4,6 +4,10 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+<div class="alert alert-danger" *ngIf="ui_alert_box">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="close_alert_box()">&times;</a>
+  This tool is not configured for this demo!
+</div>
 
 <div *ngIf=provisioning_data class="alert alert-info" role="alert">
   <i class="fa fa-spinner fa-spin" style="font-size:24px; margin: auto"></i> Please wait while your data is being provisioned ...
