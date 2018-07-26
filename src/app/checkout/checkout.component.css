@@ -9,10 +9,14 @@
   border-top-color:#bbb;
   border-left-color:#bbb;
   background:#fff;
-  width:40px;
-  height:40px;
+  width:25px;
+  height:25px;
   border-radius:50%;
 }
 .radio:checked{
   border:10px solid #4099ff;
+}
+
+div.false{
+  opacity: 0.5;
 }

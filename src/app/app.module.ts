@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {FlashMessagesModule} from 'angular2-flash-messages';
+import {FlashMessageModule} from 'angular-flash-message/dist';
 import {PopupModule} from 'ng2-opd-popup';
 
 import {AppComponent} from './app.component';
@@ -47,7 +47,7 @@ const appRoutes: Routes = [
     HttpModule,
     ExpandableListModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot(),
+    FlashMessageModule,
     PopupModule.forRoot()
   ],
   providers: [SearchService, SearchResultService, DescriptionService, HierarchyService, ProvisionToolService, UpdateCartServiceService],

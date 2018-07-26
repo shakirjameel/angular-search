@@ -25,6 +25,7 @@ export class SearchComponent implements OnInit {
   datasource_concept_list: any[] = [];
   result_list: any[] = [];
   result: any[] = [];
+  result_set: any[] = [];
 
   constructor(private _apiService: SearchService,
               private router: Router) {}
@@ -97,10 +98,12 @@ export class SearchComponent implements OnInit {
           }
           console.log("this.result_list - ");
           console.log(this.result_list);
+          this.result_set = this.result_list;
           // this.data = result.result.map(x => JSON.parse(x.data));
           // this.highlights = result.result.map(x => JSON.parse(x.highlight));
           // console.log(this.data);
           // console.log(this.highlights);
+          //   this.result_set.push(["a", "b", "c"]);
         }
       }
       });

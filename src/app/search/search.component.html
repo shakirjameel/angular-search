@@ -3,12 +3,18 @@
     <input [formControl]="queryField" type="text" id="keyword" placeholder="Search data here..." autofocus/>
   </div>
   <span style="border-bottom: 1px">
-  <span *ngFor="let result_arr of result_list">
+  <span *ngFor="let result_arr of result_set">
     <ul class="filter-select">
-      <li (click)="selectedSuggestion(result)" *ngFor="let result of result_arr" class="filter-select-list">
+      <span *ngFor="let result of result_arr">
+      <li (click)="selectedSuggestion(result)"  class="filter-select-list">
         <p class="artist-name" [innerHTML]="result[2]"></p>
-        <!--<span class="tags" *ngFor='let result of result  | slice:0:6'>{{result}}</span>-->
+           <!--<span class="tags" *ngFor='let result of result  | slice:0:6'>{{result}}</span>-->
       </li>
+        <li *ngIf="result[1] === 'Equipment'" (click)="selectedSuggestion(result)"  class="filter-select-list">
+          <p class="artist-name">E<em>qu</em>ipment in Clinical Trails</p>
+          <!--<span class="tags" *ngFor='let result of result  | slice:0:6'>{{result}}</span>-->
+      </li>
+      </span>
     </ul>
   </span>
     </span>

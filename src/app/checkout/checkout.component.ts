@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { FlashMessagesService } from 'angular2-flash-messages';
+import { FlashMessage } from 'angular-flash-message/dist';
 import { Popup } from 'ng2-opd-popup';
 import { ProvisionToolService  } from './provision-tool.service';
 import { ActivatedRoute } from '@angular/router';
@@ -25,7 +25,7 @@ export class CheckoutComponent implements OnInit {
 
 
 
-  constructor(private flash_message:  FlashMessagesService,
+  constructor(private flash_message:  FlashMessage,
               private popup: Popup,
               private cart_service: UpdateCartServiceService,
               private _api_service: ProvisionToolService,
@@ -56,7 +56,7 @@ export class CheckoutComponent implements OnInit {
     if(tool_name === 'Databricks'){
       this.popup.show();
     }else{
-      this.flash_message.show('This tool is not configured for this demo!',{cssClass: 'alert-danger', timeout: 2000})
+      this.flash_message.warning('This tool is not configured for this demo!',{delay: 2000})
     }
   }
 

@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {SearchResultService} from './search-result.service';
 import {HierarchyService} from './hierarchy.service';
 import {DOCUMENT} from '@angular/platform-browser';
+import {window} from 'rxjs/operators';
 
 import 'rxjs/add/operator/switchMap'
 
